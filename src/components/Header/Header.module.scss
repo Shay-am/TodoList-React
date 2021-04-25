@@ -1,0 +1,39 @@
+.wrraper {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    margin: 15px 0;
+    color: var(--color-primary);
+    font-size: 20px;
+    font-weight: 400;
+  }
+}
+.form {
+  display: grid;
+  grid-template-columns: 1fr 5vh;
+}
+
+.inputNewTask {
+  border: none;
+  border-bottom: 2px solid var(--color-leicht);
+  box-shadow: inset 0 0 0.1em var(--color-leicht);
+  text-align: center;
+  margin-top: 35px;
+  width: 40vw;
+  height: 5vh;
+}
+
+.buttonSubmit {
+  color: var(--color-aditional);
+  background-color: white;
+  border: none;
+  font-size: 2em;
+  margin-top: 30px;
+}
+.buttonSubmit :hover {
+  color: blue;
+}
