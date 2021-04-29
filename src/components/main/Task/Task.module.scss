@@ -20,6 +20,11 @@
   text-align: center;
   font-family: "Roboto", sans-serif;
 }
+.taskComplete {
+  @extend .wrapper;
+  opacity: 0.4;
+}
+
 .completed {
   text-decoration: none;
   border: none;
@@ -28,7 +33,7 @@
   color: var(--color-leicht);
   margin-right: 10px;
 }
-.isCompleted {
+.completed:focus {
   @extend .completed;
   background-color: var(--color-leicht);
   color: white;

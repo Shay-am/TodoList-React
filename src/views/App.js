@@ -2,11 +2,12 @@ import React from "react";
 import AppContext from "../context";
 import Header from "../components/Header/Header";
 import Main from "../components/main/Main";
+// import styles from "./App.module.scss";
+// let counter = 0;
 
 class App extends React.Component {
   state = {
     arrItem: [],
-    counter: 0,
   };
 
   addItem = (e, item) => {
@@ -40,6 +41,10 @@ class App extends React.Component {
   };
 
   render() {
+    const myData = []
+      .concat(this.state.arrItem)
+      .sort((a, b) => (a.isCompleted > b.isCompleted ? 1 : -1));
+
     const contextElement = {
       state: this.state,
       addItem: this.addItem,
@@ -56,7 +61,7 @@ class App extends React.Component {
           addItem={this.addItem}
           incementCounter={this.incrementCounter}
         />
-        <Main task={this.state.arrItem} />
+        <Main task={myData} nameClass={myData.length} />
       </AppContext.Provider>
     );
   }

@@ -23,29 +23,26 @@ class Header extends React.Component {
     this.setState({ text: e.target.value });
   };
 
-  handleTwoFn = () => {};
-
   render() {
     return (
       <header className={styles.wrraper}>
         <h1 className={styles.h1}>Todo List in React</h1>
         <form className={styles.form}>
-          <label>
-            <input
-              type="text"
-              className={styles.inputNewTask}
-              placeholder="Yours new Task"
-              onChange={this.handleChangeInputValue}
-              autoComplete="off"
-            />
-          </label>
+          <input
+            type="text"
+            name="new Task"
+            className={styles.inputNewTask}
+            placeholder="Yours new Task"
+            onChange={this.handleChangeInputValue}
+            autoComplete="none"
+          />
+
           <button
             type="submit"
             className={styles.buttonSubmit}
             onClick={(e) => {
               this.props.addItem(e, this.state);
               this.newTimeId.call(this);
-              // this.props.incementCounter.call(this);
             }}
           >
             {checkIcon}
