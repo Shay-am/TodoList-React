@@ -50,12 +50,14 @@
   color: var(--color-leicht);
   margin-right: 10px;
   cursor: pointer;
+  animation: addtask 0.3s ease;
 }
 .isCompleted {
   @extend .completed;
   background-color: var(--color-leicht);
   color: white;
   border-radius: 100%;
+  animation: boxSort 1s ease;
 }
 .completed:hover {
   border: 1px solid var(--color-leicht);
