@@ -10,7 +10,7 @@ const buttonDelete = <FontAwesomeIcon icon={faTimesCircle} />;
 
 const Task = (props) => {
   const [isActive, setActive] = useState(false);
-  let btnClass = styles.completed ? styles.completed : styles.isCompleted;
+  let btnClass = props.isCompleted ? styles.isCompleted : styles.completed;
 
   return (
     <AppContext.Consumer>

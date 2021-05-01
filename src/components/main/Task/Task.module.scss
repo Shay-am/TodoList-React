@@ -1,11 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
 
+@keyframes boxSort {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+@keyframes addtask {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: 2em 1fr 3em 3em;
-
   padding: 5px;
-
   border-bottom: 1px solid #807878;
 }
 
@@ -19,27 +34,45 @@
   font-weight: 300;
   text-align: center;
   font-family: "Roboto", sans-serif;
+  animation: addtask 1s ease;
 }
 .taskComplete {
   @extend .wrapper;
   opacity: 0.4;
+  animation: boxSort 1s ease;
 }
 
 .completed {
   text-decoration: none;
   border: none;
-  font-size: 1.5em;
+  font-size: 1.1em;
   background-color: white;
   color: var(--color-leicht);
   margin-right: 10px;
+  cursor: pointer;
 }
-.completed:focus {
+.isCompleted {
   @extend .completed;
   background-color: var(--color-leicht);
   color: white;
-  border-radius: 30%;
+  border-radius: 100%;
+}
+.completed:hover {
+  border: 1px solid var(--color-leicht);
+  border-radius: 100%;
+  padding: 0 5px 0 5px;
+}
+.completed:hover {
+  @extend .isCompleted;
+  cursor: pointer;
 }
 
 .deleted {
   @extend .completed;
+}
+.deleted:hover {
+  border: none;
+  border-radius: none;
+  color: white;
+  background-color: var(--color-leicht);
 }

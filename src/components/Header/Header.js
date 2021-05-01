@@ -34,7 +34,7 @@ class Header extends React.Component {
             className={styles.inputNewTask}
             placeholder="Yours new Task"
             onChange={this.handleChangeInputValue}
-            autoComplete="none"
+            autoComplete="off"
           />
 
           <button
