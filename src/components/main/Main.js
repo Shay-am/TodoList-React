@@ -20,25 +20,29 @@ class Main extends React.Component {
     }));
   };
 
-  toggleClassNameTaskComplete = () => {};
-
   render() {
+    const { task } = this.props;
+    const { filter } = this.state;
+
     const filterList = FILTER_NAMES.map((name) => (
       <ButtonFilter
         key={name}
         name={name}
-        isPressed={name === this.state.filter}
+        isPressed={name === filter}
         setFilter={(e) => this.setFilter(e, name)}
       />
     ));
 
     return (
       <main className={styles.wrapper}>
-        {this.props.task
-          .filter(FILTER_MAP[this.state.filter])
-          .map((item, index) => (
-            <Task key={item.id} {...item} arrayLength={index} />
-          ))}
+        {task.length === 0 && (
+          <div>
+            <p className={styles.notTodo}>you do not have tasks yet. Add 👍</p>
+          </div>
+        )}
+        {this.props.task.filter(FILTER_MAP[filter]).map((item, index) => (
+          <Task key={item.id} {...item} arrayLength={index} />
+        ))}
         <footer className={styles.filter}>{filterList}</footer>
       </main>
     );

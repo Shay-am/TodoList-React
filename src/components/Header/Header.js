@@ -12,9 +12,9 @@ class Header extends React.Component {
     id: 0,
   };
 
-  newTimeId = () => {
+  uptadeIdundText = () => {
     this.setState((prevState) => {
-      return { id: prevState.id + 1 };
+      return { id: prevState.id + 1, text: "" };
     });
   };
 
@@ -34,7 +34,7 @@ class Header extends React.Component {
             className={styles.inputNewTask}
             placeholder="Yours new Task"
             onChange={this.handleChangeInputValue}
-            autoComplete="off"
+            value={this.state.text}
           />
 
           <button
@@ -42,7 +42,7 @@ class Header extends React.Component {
             className={styles.buttonSubmit}
             onClick={(e) => {
               this.props.addItem(e, this.state);
-              this.newTimeId.call(this);
+              this.uptadeIdundText.call(this);
             }}
           >
             {checkIcon}
