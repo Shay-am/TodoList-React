@@ -9,7 +9,6 @@ const buttonComplete = <FontAwesomeIcon icon={faCheck} />;
 const buttonDelete = <FontAwesomeIcon icon={faTimesCircle} />;
 
 const Task = (props) => {
-  // const [isActive, setActive] = useState(false);
   let btnClass = props.isCompleted ? styles.isCompleted : styles.completed;
 
   return (
