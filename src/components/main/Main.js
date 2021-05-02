@@ -37,7 +37,9 @@ class Main extends React.Component {
       <main className={styles.wrapper}>
         {task.length === 0 && (
           <div>
-            <p className={styles.notTodo}>you do not have tasks yet. Add 👍</p>
+            <p className={styles.notTodo}>
+              you do not have tasks yet. Add Task ❤️
+            </p>
           </div>
         )}
         {this.props.task.filter(filter_map[filter]).map((item, index) => (
