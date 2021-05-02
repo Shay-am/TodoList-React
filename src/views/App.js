@@ -2,7 +2,6 @@ import React from "react";
 import AppContext from "../context";
 import Header from "../components/Header/Header";
 import Main from "../components/main/Main";
-// import styles from "./App.module.scss";
 
 class App extends React.Component {
   state = {
