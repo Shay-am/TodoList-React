@@ -3,12 +3,12 @@ import Task from "./Task/Task";
 import styles from "./Main.module.scss";
 import ButtonFilter from "./Task/Button/ButtonFilter";
 
-const FILTER_MAP = {
+const filter_map = {
   "Show All": () => true,
   "Show Active": (task) => !task.isCompleted,
   "Show Completed": (task) => task.isCompleted,
 };
-const FILTER_NAMES = Object.keys(FILTER_MAP);
+const filter_names = Object.keys(filter_map);
 
 class Main extends React.Component {
   state = {
@@ -24,7 +24,7 @@ class Main extends React.Component {
     const { task } = this.props;
     const { filter } = this.state;
 
-    const filterList = FILTER_NAMES.map((name) => (
+    const filterList = filter_names.map((name) => (
       <ButtonFilter
         key={name}
         name={name}
@@ -40,7 +40,7 @@ class Main extends React.Component {
             <p className={styles.notTodo}>you do not have tasks yet. Add 👍</p>
           </div>
         )}
-        {this.props.task.filter(FILTER_MAP[filter]).map((item, index) => (
+        {this.props.task.filter(filter_map[filter]).map((item, index) => (
           <Task key={item.id} {...item} arrayLength={index} />
         ))}
         <footer className={styles.filter}>{filterList}</footer>
